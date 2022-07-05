@@ -1,0 +1,30 @@
+{
+  "name": "e-commerce-sequelise",
+  "version": "1.0.0",
+  "description": "Building the back end for an e-commerce website using sequelize ORM with Node.js and Express to interact with a MySQL database.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahrahaji10/e-commerce-sequelise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zahrahaji10/e-commerce-sequelise/issues"
+  },
+  "homepage": "https://github.com/zahrahaji10/e-commerce-sequelise#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
