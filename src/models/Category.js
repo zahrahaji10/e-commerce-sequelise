@@ -2,8 +2,10 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
+// Initialize Category model (table) by extending off Sequelize's Model class
 class Category extends Model {}
 
+// fields and rules for Category model
 const schema = {
   id: {
     type: DataTypes.INTEGER,
@@ -11,7 +13,7 @@ const schema = {
     primaryKey: true,
     autoIncrement: true,
   },
-  CategoryName: {
+  categoryName: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -25,6 +27,6 @@ const options = {
   modelName: "category",
 };
 
-Books.init(schema, options);
+Category.init(schema, options);
 
 module.exports = Category;

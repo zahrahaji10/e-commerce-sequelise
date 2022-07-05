@@ -11,9 +11,14 @@ const getAllProducts = (req, res) => {
 
 // get one product fn
 const getProductById = (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
-  return res.send("getProductById");
+  try {
+    // find a single product by its `id`
+    // be sure to include its associated Category and Tag data
+    return res.send("getProductById");
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
 };
 
 // create new product fn
