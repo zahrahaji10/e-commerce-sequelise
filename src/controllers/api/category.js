@@ -17,7 +17,7 @@ const getAllCategories = async (req, res) => {
     });
 
     // be sure to include its associated Products
-    return res.json({ data: categories });
+    return res.json({ data: categories, status: 200 });
   } catch (error) {
     console.log(`[ERROR]: Failed to get categories | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -28,10 +28,10 @@ const getAllCategories = async (req, res) => {
 const getCategoryById = async (req, res) => {
   try {
     // get id from req params
-    const { id } = req.params;
+    const categoryId = req.params.id;
 
     // find one category by its `id` value
-    const category = await Category.findByPk(id, {
+    const category = await Category.findByPk(categoryId, {
       include: [
         {
           model: Product,
@@ -41,7 +41,7 @@ const getCategoryById = async (req, res) => {
     });
 
     // return response
-    return res.send({ data: category });
+    return res.send({ data: category, status: 200 });
   } catch (error) {
     console.log(`[ERROR]: Failed to get categories by id | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });

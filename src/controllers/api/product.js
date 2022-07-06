@@ -18,9 +18,8 @@ const getAllProducts = async (req, res) => {
         },
       ],
     });
-
-    // be sure to include its associated Products
-    return res.json({ data: products });
+    // return response
+    return res.json({ data: products, status: 200 });
   } catch (error) {
     console.log(`[ERROR]: Failed to get products | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -28,14 +27,30 @@ const getAllProducts = async (req, res) => {
 };
 
 // get one product fn
-const getProductById = (req, res) => {
+const getProductById = async (req, res) => {
   try {
-    // find a single product by its `id`
+    // get id from req params
+    const productId = req.params.id;
+
+    // find one product by id
+    const product = await Product.findByPk(productId, {
+      include: [
+        {
+          model: Category,
+          attributes: ["id", `category_name`],
+        },
+        {
+          model: Tag,
+          attributes: ["id", `tag_name`],
+        },
+      ],
+    });
+
     // be sure to include its associated Category and Tag data
-    return res.send("getProductById");
+    return res.json({ data: product, status: 200 });
   } catch (error) {
-    console.log(error);
-    res.status(400).json(error);
+    console.log(`[ERROR]: Failed to get product by id | ${error.message}`);
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
