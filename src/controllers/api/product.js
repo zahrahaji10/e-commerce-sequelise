@@ -3,10 +3,28 @@ const { Product, Category, Tag, ProductTag } = require("../../models");
 // The `/api/products` endpoint
 
 // get all products fn
-const getAllProducts = (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
-  return res.send(" getAllProducts");
+const getAllProducts = async (req, res) => {
+  try {
+    // find all categories
+    const products = await Product.findAll({
+      include: [
+        {
+          model: Category,
+          attributes: ["id", `category_name`],
+        },
+        {
+          model: Tag,
+          attributes: ["id", `tag_name`],
+        },
+      ],
+    });
+
+    // be sure to include its associated Products
+    return res.json({ data: products });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to get products | ${error.message}`);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 // get one product fn
