@@ -1,21 +1,35 @@
 const { Category, Product } = require("../../models");
+const seedCategories = require("../../seeds/category-seeds");
+S;
 
 // The `/api/categories` endpoint
 
 // get all categories fn
 const getAllCategories = async (req, res) => {
-  // find all categories
-  const categories = await Category.findAll();
+  try {
+    // find all categories
+    const categories = await Category.findAll({
+      include: [
+        {
+          model: Product,
+        },
+      ],
+    });
 
-  // be sure to include its associated Products
-  return res.json({ data: categories });
+    // be sure to include its associated Products
+    return res.json({ data: categories });
+  } catch (error) {
+    return res.status(500).json({});
+  }
 };
 
 // get one category fn
 const getCategoryById = (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
-  return res.send("getCategoryById");
+  try {
+    // find one category by its `id` value
+    // be sure to include its associated Products
+    return res.send("getCategoryById");
+  } catch (error) {}
 };
 
 // create new category fn
