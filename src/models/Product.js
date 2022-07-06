@@ -44,6 +44,7 @@ const schema = {
   },
 };
 
+// declare the options for the table
 const options = {
   sequelize,
   timestamps: false,
