@@ -1,6 +1,5 @@
 const { Category, Product } = require("../../models");
 const seedCategories = require("../../seeds/category-seeds");
-S;
 
 // The `/api/categories` endpoint
 
@@ -12,6 +11,7 @@ const getAllCategories = async (req, res) => {
       include: [
         {
           model: Product,
+          attributes: ["id", `product_name`, "price", "stock", "category_id"],
         },
       ],
     });
@@ -19,17 +19,32 @@ const getAllCategories = async (req, res) => {
     // be sure to include its associated Products
     return res.json({ data: categories });
   } catch (error) {
-    return res.status(500).json({});
+    console.log(`[ERROR]: Failed to get categories | ${error.message}`);
+    return res.status(500).json({ message: "Internal server error" });
   }
 };
 
 // get one category fn
 const getCategoryById = (req, res) => {
   try {
-    // find one category by its `id` value
+    // find one category by its `id` value using req params
+    const { id } = req.params;
+
     // be sure to include its associated Products
+    // get books from file
+    const books = getDataFromFile("books");
+
+    // find book by id
+    const singleCategories = Category.find((category) => category.id === id);
+
+    // return response
+    return res.json({ data: categories });
+
     return res.send("getCategoryById");
-  } catch (error) {}
+  } catch (error) {
+    console.log(`[ERROR]: Failed to get categories by id | ${error.message}`);
+    return res.status(500).json({ message: "Internal server error" });
+  }
 };
 
 // create new category fn
