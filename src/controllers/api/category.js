@@ -3,10 +3,12 @@ const { Category, Product } = require("../../models");
 // The `/api/categories` endpoint
 
 // get all categories fn
-const getAllCategories = (req, res) => {
+const getAllCategories = async (req, res) => {
   // find all categories
+  const categories = await Category.findAll();
+
   // be sure to include its associated Products
-  return res.send("getAllCategories");
+  return res.json({ data: categories });
 };
 
 // get one category fn
