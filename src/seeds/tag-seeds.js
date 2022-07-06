@@ -1,6 +1,4 @@
-const {
-  Tag,
-} = require("../../../../instructor/class-content/13-ORM/02-Challenge/Develop/models");
+const { Tag } = require("../models");
 
 const tagData = [
   {
