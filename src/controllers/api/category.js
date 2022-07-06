@@ -58,7 +58,7 @@ const createCategory = async (req, res) => {
     const newCategory = await Category.create(req.body);
 
     // return response
-    return res.send({ data: newCategory });
+    return res.send({ data: newCategory, status: 200 });
   } catch (error) {
     console.log(`[ERROR]: Failed to get categories by id | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -66,15 +66,40 @@ const createCategory = async (req, res) => {
 };
 
 // update category fn
-const updateCategoryById = (req, res) => {
-  // update a category by its `id` value
-  return res.send("updateCategoryById");
+const updateCategoryById = async (req, res) => {
+  try {
+    // get id from req params
+    const category = req.params.id;
+
+    // update a category using category model
+    const updateCategory = await Category.update(req.body, {
+      where: { id: category },
+    });
+
+    // return response
+    return res.json({ data: updateCategory, status: 200 });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to get categories by id | ${error.message}`);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 // delete category fn
-const deleteCategoryById = (req, res) => {
-  // delete a category by its `id` value
-  return res.send("updateCategoryById");
+const deleteCategoryById = async (req, res) => {
+  try {
+    // get id from req params
+    const category = req.params.id;
+
+    // delete a category using category model
+    const deleteCategory = await Category.destroy({
+      where: { id: category },
+    });
+
+    return res.json({ data: deleteCategory, status: 200 });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to delete | ${error.message}`);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 module.exports = {
