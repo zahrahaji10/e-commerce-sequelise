@@ -20,39 +20,49 @@ const getAllCategories = async (req, res) => {
     return res.json({ data: categories });
   } catch (error) {
     console.log(`[ERROR]: Failed to get categories | ${error.message}`);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
 // get one category fn
-const getCategoryById = (req, res) => {
+const getCategoryById = async (req, res) => {
   try {
-    // find one category by its `id` value using req params
+    // get id from req params
     const { id } = req.params;
 
-    // be sure to include its associated Products
-    // get books from file
-    const books = getDataFromFile("books");
-
-    // find book by id
-    const singleCategories = Category.find((category) => category.id === id);
+    // find one category by its `id` value
+    const category = await Category.findByPk(id, {
+      include: [
+        {
+          model: Product,
+          attributes: [`product_name`, "price", "stock", "category_id"],
+        },
+      ],
+    });
 
     // return response
-    return res.json({ data: categories });
-
-    return res.send("getCategoryById");
+    return res.send({ data: category });
   } catch (error) {
     console.log(`[ERROR]: Failed to get categories by id | ${error.message}`);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
 // create new category fn
-const createCategory = (req, res) => {
-  // create a new category
-  // create the payload structure
-  // use the .create field for model
-  return res.send("createCategory");
+const createCategory = async (req, res) => {
+  try {
+    // get the payload from req body
+    const { category_name } = req.body;
+
+    // create a new category using category model
+    const newCategory = await Category.create(req.body);
+
+    // return response
+    return res.send({ data: newCategory });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to get categories by id | ${error.message}`);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 // update category fn
