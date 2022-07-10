@@ -98,6 +98,7 @@ nmp run dev
 <details>
   <summary>Postman exported collection - Endpoints for all routes</summary>
   
+  ```
  {
 	"info": {
 		"_postman_id": "833f6ab7-3cb6-4038-bd37-7b71ff751337",
@@ -576,6 +577,7 @@ nmp run dev
 		}
 	]
 }
+```
 </details
 
 ## Video Demonstration
@@ -587,11 +589,3 @@ For any questions about this application, you can contact me on the following;
 - Personal E-mail : zahrahhaji10@gmail.com
 
 - GitHub profile [Click Here](https://github.com/zahrahaji10)
-
-```
-
-```
-
-```
-
-```
