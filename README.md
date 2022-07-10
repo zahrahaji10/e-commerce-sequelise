@@ -96,490 +96,488 @@ nmp run dev
 - Once the database is connect and the server is running, you can use postman to test the API endpoints of this application.
 
 <details>
-  <summary>Click for routes for all the endpoints </summary>
-
-## Postman collection
-
-{
-"info": {
-"\_postman_id": "4972b1ac-f01b-4020-9188-225f082200e9",
-"name": "e-commerce",
-"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-"\_exporter_id": "21648139"
-},
-"item": [
-{
-"name": "get all categories",
-"protocolProfileBehavior": {
-"disableBodyPruning": true
-},
-"request": {
-"method": "GET",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
+  <summary>Endpoints for all routes</summary>
+  
+  ## Postman exported collection
+ {
+	"info": {
+		"_postman_id": "833f6ab7-3cb6-4038-bd37-7b71ff751337",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21648139"
+	},
+	"item": [
+		{
+			"name": "get all categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get category by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/categories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category_name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category_name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/categories/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a specific category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/categories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all prducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_name\": \"\",\r\n    \"price\": \"\",\r\n    \"stock\": \"\",\r\n    \"category_id\": \"\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a specific product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_name\": \"\",\r\n    \"price\": \"\",\r\n    \"stock\": \"\",\r\n    \"category_id\": \"\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a specific product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tags",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tags/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tags",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a tag by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tags/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tags",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a tag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tag_name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tags/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tags",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a specific tag",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tag_name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tags/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tags",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a specific tag",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tags/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tags",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/categories/",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"categories",
-""
-]
-}
-},
-"response": []
-},
-{
-"name": "get category by id",
-"protocolProfileBehavior": {
-"disableBodyPruning": true
-},
-"request": {
-"method": "GET",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/categories/1",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"categories",
-"1"
-]
-}
-},
-"response": []
-},
-{
-"name": "create a category",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\r\n \"category_name\": \"\"\r\n}",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/categories/",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"categories",
-""
-]
-}
-},
-"response": []
-},
-{
-"name": "update a category",
-"request": {
-"method": "PUT",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\r\n \"category_name\": \"\"\r\n}",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/categories/6",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"categories",
-"6"
-]
-}
-},
-"response": []
-},
-{
-"name": "delete a specific category",
-"request": {
-"method": "DELETE",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/categories/1",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"categories",
-"1"
-]
-}
-},
-"response": []
-},
-{
-"name": "get all prducts",
-"protocolProfileBehavior": {
-"disableBodyPruning": true
-},
-"request": {
-"method": "GET",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/products/",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"products",
-""
-]
-}
-},
-"response": []
-},
-{
-"name": "get product by id",
-"protocolProfileBehavior": {
-"disableBodyPruning": true
-},
-"request": {
-"method": "GET",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/products/1",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"products",
-"1"
-]
-}
-},
-"response": []
-},
-{
-"name": "create a product",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\r\n \"product_name\": \"\",\r\n \"price\": \"\",\r\n \"stock\": \"\",\r\n \"category_id\": \"\"\r\n}\r\n",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/products/",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"products",
-""
-]
-}
-},
-"response": []
-},
-{
-"name": "update a specific product",
-"request": {
-"method": "PUT",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\r\n \"product_name\": \"\",\r\n \"price\": \"\",\r\n \"stock\": \"\",\r\n \"category_id\": \"\"\r\n}\r\n",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/products/5",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"products",
-"5"
-]
-}
-},
-"response": []
-},
-{
-"name": "delete a specific product",
-"request": {
-"method": "DELETE",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\r\n \"id\":\"1\"\r\n}",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/products/1",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"products",
-"1"
-]
-}
-},
-"response": []
-},
-{
-"name": "get all tags",
-"protocolProfileBehavior": {
-"disableBodyPruning": true
-},
-"request": {
-"method": "GET",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/tags/",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"tags",
-""
-]
-}
-},
-"response": []
-},
-{
-"name": "get a tag by id",
-"protocolProfileBehavior": {
-"disableBodyPruning": true
-},
-"request": {
-"method": "GET",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/tags/1",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"tags",
-"1"
-]
-}
-},
-"response": []
-},
-{
-"name": "create a tag",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\r\n \"tag_name\": \"\"\r\n}",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/tags/",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"tags",
-""
-]
-}
-},
-"response": []
-},
-{
-"name": "update a specific tag",
-"request": {
-"method": "PUT",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\r\n \"tag_name\": \"\"\r\n}",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/tags/9",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"tags",
-"9"
-]
-}
-},
-"response": []
-},
-{
-"name": "delete a specific tag",
-"request": {
-"method": "DELETE",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "",
-"options": {
-"raw": {
-"language": "json"
-}
-}
-},
-"url": {
-"raw": "http://localhost:3001/api/tags/1",
-"protocol": "http",
-"host": [
-"localhost"
-],
-"port": "3001",
-"path": [
-"api",
-"tags",
-"1"
-]
-}
-},
-"response": []
-}
-]
-}
-
-</details>
+</details
 
 ## Video Demonstration
 
