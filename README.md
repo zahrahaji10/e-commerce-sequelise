@@ -96,9 +96,8 @@ nmp run dev
 - Once the database is connect and the server is running, you can use postman to test the API endpoints of this application.
 
 <details>
-  <summary>Endpoints for all routes</summary>
+  <summary>Postman exported collection - Endpoints for all routes</summary>
   
-  ## Postman exported collection
  {
 	"info": {
 		"_postman_id": "833f6ab7-3cb6-4038-bd37-7b71ff751337",
